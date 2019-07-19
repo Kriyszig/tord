@@ -1,3 +1,4 @@
+sudo: true
 os: linux
 language: d
 d:
@@ -10,7 +11,6 @@ branches:
 env:
  - ARCH="x86_64"
 before_install:
-  - apt install tor
-  - tor
+  - sudo apt-get install tor
 script:
   - dub test --arch "$ARCH"
