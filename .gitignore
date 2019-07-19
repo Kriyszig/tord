@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/tord
+tord.so
+tord.dylib
+tord.dll
+tord.a
+tord.lib
+tord-test-*
+*.exe
+*.o
+*.obj
+*.lst

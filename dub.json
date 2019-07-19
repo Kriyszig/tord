@@ -1,0 +1,10 @@
+{
+	"authors": [
+		"Prateek Nayak"
+	],
+	"copyright": "Copyright © 2019, Prateek Nayak",
+	"description": "A Tor request library written in D",
+	"license": "Apache-2.0",
+	"name": "tord",
+	"targetType": "library"
+}

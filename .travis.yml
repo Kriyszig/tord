@@ -1,0 +1,16 @@
+os: linux
+language: d
+d:
+ - ldc
+ - dmd-beta
+ - dmd
+branches:
+  only:
+    - master
+env:
+ - ARCH="x86_64"
+before_install:
+  - apt install tor
+  - tor
+script:
+  - dub test --arch "$ARCH"
