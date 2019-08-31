@@ -13,4 +13,5 @@ env:
 before_install:
   - sudo apt-get install tor
 script:
+  - sleep 10
   - dub test --arch "$ARCH"
