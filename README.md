@@ -10,9 +10,9 @@ inspiration for this came from the JavaScript library [tor-request](https://gith
 
 ### What is Tor?
 
-Tor [The Onion Router] is a program devloped to protect your privacy online.  You can watch [this video](https://www.youtube.com/watch?v=VmsFxBEN3fc) to learn
+Tor(The Onion Router) is a program devloped to protect your privacy online.  You can watch [this video](https://www.youtube.com/watch?v=VmsFxBEN3fc) to learn
 more about Tor. On the plus side, Tor is open source - [git repository](https://gitweb.torproject.org/tor.git). If you have any questions regarding it's working,
-you can check the source code yourself or as the developers on the Tor mailing list - they are a nice bunch of people :)
+you can check the source code yourself or ask the developers on the [Tor mailing list](https://lists.torproject.org/) - they are a nice bunch of people :)
 
 #### Note: This project is still in the initital development stage. Breaking changes can and will happen.
 
