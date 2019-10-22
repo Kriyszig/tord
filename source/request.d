@@ -181,8 +181,7 @@ unittest
 	auto tr = Request();
 	const auto tresponse1 = tr.get("https://api.jikan.moe/v3/character/1/pictures");
 	const auto tresponse2 = tr.get("https://api.jikan.moe/v3/character/1/pictures");
-	// import std.stdio: writeln;
-	// writeln(tresponse);
 
-	assert(tresponse1 == tresponse2);
+    import std.algorithm: countUntil;
+    assert(tresponse1[countUntil(tresponse1, "\"pictures\"") .. $], tresponse2[countUntil(tresponse2, "\"pictures\"") .. $]);
 }
