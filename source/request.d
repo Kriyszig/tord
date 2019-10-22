@@ -152,6 +152,14 @@ public:
 		del(url, client);
 		responseHeaders = client.responseHeaders();
 	}
+
+    /++
+    Clears the response headers
+    +/
+    void clearResponseHeaders()
+    {
+        responseHeaders = string[string].init;
+    }
 }
 
 // Check if Proxy kicks in
