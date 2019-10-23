@@ -30,6 +30,11 @@ public:
 		this.port = port;
 	}
 
+    void setControlPort(ushort port = 9050)
+    {
+        this.port = port;
+    }
+
 	void setCookieJar(string cookiefile)
 	{
 		this.cookiefile = cookiefile;
