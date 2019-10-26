@@ -35,6 +35,30 @@ public:
         this.port = port;
     }
 
+    bool checkTor()
+    {
+        string[6] paths = [
+            "/usr/local/etc/tor/torrc",
+            "/tor/etc/tor/torrc",
+            "/etc/tor/torrc",
+            "/lib/etc/tor/torrc",
+            "~/.torrc",
+            "~/Library/Application Support/TorBrowser-Data/torrc"
+        ];
+
+        foreach(i; paths)
+        {
+            import std.file: exists;
+            if(i.exists)
+                return true;
+            string withSuffix = i ~ ".sample";
+            if(withSuffix.exists)
+                    return true;
+        }
+
+        return false;
+    }
+
 	void setCookieJar(string cookiefile)
 	{
 		this.cookiefile = cookiefile;
@@ -165,6 +189,13 @@ public:
     {
         responseHeaders = string[string].init;
     }
+}
+
+// Check if Tor is installed
+unittest
+{
+    auto tr = Request();
+    assert(tr.checkTor() == true);
 }
 
 // Check if Proxy kicks in
