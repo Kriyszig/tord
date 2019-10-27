@@ -74,6 +74,11 @@ public:
 	+/
 	auto get(string url, string[string] extraHeaders = string[string].init)
 	{
+        if(!checkTor())
+        {
+            return (char[]).init;
+        }
+
 		auto client = HTTP();
 		client.proxy = resolveProxyUrl();
 		client.proxyType = proxytype;
@@ -105,6 +110,11 @@ public:
 	+/
 	auto post(PostUnit)(string url, const(PostUnit)[] postData, string[string] extraHeaders = string[string].init)
 	{
+        if(!checkTor())
+        {
+            return (char[]).init;
+        }
+
 		auto client = HTTP();
 		client.proxy = resolveProxyUrl();
 		client.proxyType = proxytype;
@@ -136,6 +146,11 @@ public:
 	+/
 	auto put(PutUnit)(string url, const(PutUnit)[] putData, string[string] extraHeaders = string[string].init)
 	{
+        if(!checkTor())
+        {
+            return (char[]).init;
+        }
+
 		auto client = HTTP();
 		client.proxy = resolveProxyUrl();
 		client.proxyType = proxytype;
@@ -164,6 +179,11 @@ public:
 	+/
 	void del(string url, string[string] extraHeaders = string[string].init)
 	{
+        if(!checkTor())
+        {
+            return;
+        }
+
 		auto client = HTTP();
 		client.proxy = resolveProxyUrl();
 		client.proxyType = proxytype;
