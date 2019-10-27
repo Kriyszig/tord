@@ -231,6 +231,19 @@ unittest
 	assert(tresponse != response);
 }
 
+// Check if results are consistent with normal requests
+unittest
+{
+    import std.net.curl: get;
+    const auto response = get("https://api.jikan.moe/v3/character/1/pictures");
+
+    auto tr = Request();
+    const auto tresponse = tr.get("https://api.jikan.moe/v3/character/1/pictures");
+
+    import std.algorithm: countUntil;
+    assert(response[countUntil(response, "\"pictures\"") .. $], tresponse[countUntil(tresponse,   "\"pictures\"") .. $]);
+}
+
 // Check if results are consistent.
 unittest
 {
